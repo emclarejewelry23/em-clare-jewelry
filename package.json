@@ -1,0 +1,9 @@
+{
+  "name": "em-clare-jewelry",
+  "private": true,
+  "type": "module",
+  "description": "e.m. clare jewelry shop: static storefront with a password-protected shop manager on Netlify",
+  "dependencies": {
+    "@netlify/blobs": "11.1.6"
+  }
+}

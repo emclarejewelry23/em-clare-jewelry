@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>e.m. clare jewelry · Handmade pearl and gemstone jewelry</title>
+<meta name="description" content="Handmade pearl and natural gemstone necklaces by Jennifer Clare in Austin, Texas. Shop one-of-a-kind pieces or request a custom design.">
+<meta property="og:title" content="e.m. clare jewelry">
+<meta property="og:description" content="Handmade pearl and natural gemstone jewelry by Jennifer Clare.">
+<meta property="og:image" content="/logo.webp">
+<meta property="og:type" content="website">
+<link rel="icon" href="/logo.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Jost:wght@300;400;500;600&family=La+Belle+Aurore&display=swap">
+<style id="site-style">
+*,*::before,*::after{box-sizing:border-box}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+
+/* Layout: a pearl strand on sea glass — seafoam ground, Tahitian-teal bands, coral and gold accents; dotted rules borrowed from the logo label */
+:root{
+  --paper:#fdf9f6; --card:#ffffff; --tray:#f5e9e3; --ink:#221b1a; --muted:#6f625e; --line:#e8d9d1; --brass:#a5772c; --brass-ink:#ffffff;
+  --blush:#eaf1ee; --blush-deep:#c9e0db; --emerald:#15434c; --emerald-2:#1e5a65; --on-emerald:#f6efe4; --gold-soft:#e2bf7c; --coral:#c2443a;
+  --sold:#c2443a; --ok:#2b6b5c;
+  --f-display:"Gilda Display","Didot","Bodoni 72",Georgia,serif;
+  --f-body:"Jost","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --f-script:"La Belle Aurore","Segoe Script","Brush Script MT",cursive;
+  --wrap:1180px; --r:3px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#141312; --card:#1d1b19; --tray:#26201f; --ink:#f2ebe4; --muted:#ada097; --line:#3b3431; --brass:#d8ae63; --brass-ink:#1a1612;
+  --blush:#18211f; --blush-deep:#20353a; --emerald:#103540; --emerald-2:#184a55; --on-emerald:#f1e7d8; --gold-soft:#e2bf7c; --coral:#ef8c7d; --sold:#ef8c7d; --ok:#8fcbb2; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#141312; --card:#1d1b19; --tray:#26201f; --ink:#f2ebe4; --muted:#ada097; --line:#3b3431; --brass:#d8ae63; --brass-ink:#1a1612;
+  --blush:#18211f; --blush-deep:#20353a; --emerald:#103540; --emerald-2:#184a55; --on-emerald:#f1e7d8; --gold-soft:#e2bf7c; --coral:#ef8c7d; --sold:#ef8c7d; --ok:#8fcbb2; color-scheme:dark}
+
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;font-weight:400}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--paper)}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;line-height:1.15;text-wrap:balance;margin:0}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.script{font-family:var(--f-script);font-size:1.35em;line-height:1}
+.dots{height:2px;background-image:radial-gradient(circle,var(--brass) 1px,transparent 1.3px);background-size:7px 2px;background-repeat:repeat-x;opacity:.8;border:0;margin:0}
+:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:500 14px/1 var(--f-body);letter-spacing:.06em;text-transform:uppercase;padding:14px 22px;border-radius:var(--r);border:1px solid var(--emerald);background:var(--emerald);color:var(--on-emerald);text-decoration:none;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn.gold{background:var(--gold-soft);border-color:var(--gold-soft);color:#2a2014}
+.btn.gold:hover{background:var(--on-emerald);border-color:var(--on-emerald);color:#2a2014}
+.btn.on-dark{background:transparent;border-color:var(--on-emerald);color:var(--on-emerald)}
+.btn.on-dark:hover{background:var(--on-emerald);color:var(--emerald)}
+.btn:hover{background:var(--brass);border-color:var(--brass);color:var(--brass-ink)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{border-color:var(--brass);color:var(--brass);background:transparent}
+.btn.small{padding:9px 14px;font-size:12px}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.linkbtn{background:none;border:0;padding:0;font:inherit;color:var(--brass);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+
+/* header */
+.ribbon{background:var(--emerald);color:var(--on-emerald);font-size:12px;letter-spacing:.16em;text-transform:uppercase;text-align:center;padding-block:8px}
+.ribbon span{color:var(--gold-soft)}
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand .sticker{width:46px;height:46px}
+.brand b{font-family:var(--f-display);font-weight:400;font-size:22px;letter-spacing:.01em}
+.brand i{font-family:var(--f-script);font-style:normal;color:var(--brass);font-size:17px;margin-left:2px}
+nav.main{display:flex;gap:22px;flex-wrap:wrap}
+nav.main a{text-decoration:none;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+nav.main a:hover{color:var(--ink)}
+@media (max-width:640px){.brand b{font-size:19px}.brand i{display:none}nav.main{gap:14px}nav.main a{font-size:11px;letter-spacing:.1em}}
+@media (max-width:420px){nav.main a[href="#about"]{display:none}}
+
+/* logo sticker: always white like the printed label */
+.sticker{border-radius:50%;background:#fff;box-shadow:0 0 0 1px var(--line);display:block;object-fit:contain;aspect-ratio:1;max-width:100%}
+
+/* hero */
+.hero{padding-block:56px 60px;background:radial-gradient(120% 90% at 85% 10%,var(--blush-deep) 0,transparent 55%),var(--blush);position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:center}
+.hero .eyebrow{color:var(--brass)}
+.hero h1{font-size:clamp(38px,5.4vw,66px);margin:14px 0 18px}
+.hero h1 em{font-style:normal;color:var(--coral)}
+.hero p.lede{font-size:18px;color:var(--muted);max-width:52ch;font-weight:300}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero-mark{position:relative;justify-self:center;width:min(380px,100%)}
+.hero-mark .disc{position:absolute;inset:-16px;border:1px solid var(--brass);border-radius:50%;opacity:.6;z-index:0;pointer-events:none}
+.hero-mark .sticker{position:relative;z-index:1;width:100%;transform:rotate(-6deg);box-shadow:0 0 0 1px var(--line),0 28px 50px -34px rgba(20,40,44,.4)}
+.hero-mark .arch{position:relative;z-index:1;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:999px 999px 4px 4px;display:block;max-width:100%;box-shadow:0 30px 60px -38px rgba(20,40,44,.45)}
+.hero-mark.photo .disc{inset:-14px 14px 14px -14px;border-radius:999px 999px 4px 4px}
+.hero-mark .mini{position:absolute;z-index:2;left:-8%;bottom:-4%;width:34%}
+.hero-mark .mini .sticker{transform:rotate(-8deg);box-shadow:0 0 0 1px var(--line),0 14px 28px -18px rgba(20,40,44,.45)}
+.hero-mark .tag{position:absolute;z-index:3;right:-6px;bottom:6%;background:var(--card);border:1px solid var(--line);padding:8px 14px;border-radius:var(--r);font-size:13px;color:var(--brass);transform:rotate(4deg)}
+.hero-mark.photo .tag{top:8%;bottom:auto;right:-10px}
+@media (max-width:760px){.hero{padding-block:32px 40px}.hero-grid{grid-template-columns:1fr;gap:32px}.hero-mark{width:min(260px,72%);order:-1}.hero-mark .mini{left:-14%}}
+
+/* shop */
+section.block{padding-block:56px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.sec-head h2{font-size:clamp(30px,3.6vw,42px)}
+.count{color:var(--muted);font-size:14px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 28px}
+.chip{font:500 13px/1 var(--f-body);letter-spacing:.06em;padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--emerald);border-color:var(--emerald);color:var(--on-emerald)}
+.chip:hover{border-color:var(--brass);color:var(--brass)}
+.chip[aria-pressed="true"]:hover{color:var(--on-emerald)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:36px 26px}
+@media (max-width:560px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 14px}}
+.card{all:unset;display:flex;flex-direction:column;gap:12px;cursor:pointer;min-width:0}
+.card:focus-visible{outline:2px solid var(--brass);outline-offset:6px}
+.ph{position:relative;aspect-ratio:4/5;background:var(--tray);overflow:hidden;border-radius:var(--r);max-width:100%}
+.ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.card:hover .ph img{transform:scale(1.04)}
+.ph .none{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-family:var(--f-script);font-size:22px}
+.badge{position:absolute;left:10px;top:10px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:6px 9px;border-radius:2px;background:var(--gold-soft);color:#2a2014;font-weight:500}
+.badge.sold{background:var(--sold);color:#fff}
+.card h3{transition:color .2s}
+.card:hover h3{color:var(--brass)}
+.card .meta{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.card h3{font-size:19px;min-width:0}
+.price{font-family:var(--f-display);font-size:18px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.card .cat{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:-6px}
+.empty{border:1px dashed var(--line);border-radius:var(--r);padding:48px 24px;text-align:center;display:grid;gap:12px;justify-items:center;color:var(--muted)}
+.empty h3{color:var(--ink);font-size:26px}
+
+/* story sections */
+.band{background:var(--emerald);color:var(--on-emerald)}
+.band .eyebrow{color:var(--gold-soft)}
+.band .prose{color:var(--on-emerald)}
+.band h2{color:var(--on-emerald)}
+.band .script-mark{font-family:var(--f-script);color:var(--gold-soft);font-size:28px;margin-top:14px;display:block}
+#about{background:var(--paper)}
+#contact{background:var(--blush)}
+#contact .eyebrow{color:var(--brass)}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
+@media (max-width:760px){.two{grid-template-columns:1fr;gap:28px}}
+.prose{font-size:17px;max-width:62ch;white-space:pre-line;font-weight:300}
+.prose + .prose{margin-top:14px}
+.about-photo{aspect-ratio:4/5;object-fit:cover;width:100%;border-radius:var(--r);max-width:100%}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
+.contact-item{display:grid;gap:6px;min-width:0}
+.contact-item .val{font-family:var(--f-display);font-size:22px;word-break:break-word;user-select:all}
+.contact-item .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media (max-width:640px){.strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.strip a{display:block;aspect-ratio:1;overflow:hidden;border-radius:var(--r);max-width:100%;background:var(--tray)}
+.strip img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.strip a:hover img{transform:scale(1.05)}
+footer.site{padding-block:28px;background:var(--emerald);color:var(--on-emerald);font-size:13px}
+footer.site .script{color:var(--gold-soft)!important}
+footer.site .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+
+/* product modal */
+.overlay{position:fixed;inset:0;z-index:40;background:rgba(15,12,10,.55);display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.sheet{background:var(--paper);color:var(--ink);width:min(980px,100%);max-height:100%;overflow:auto;border-radius:6px;position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}
+@media (max-width:760px){.sheet{grid-template-columns:1fr}}
+.x{position:absolute;right:10px;top:10px;z-index:2;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:20px;cursor:pointer;line-height:1}
+.gallery{padding:18px;display:grid;gap:10px;align-content:start}
+.gallery .main{aspect-ratio:1;background:var(--tray);border-radius:var(--r);overflow:hidden;max-width:100%}
+.gallery .main img{width:100%;height:100%;object-fit:cover}
+.thumbs{display:flex;gap:8px;flex-wrap:wrap}
+.thumbs button{all:unset;width:64px;height:64px;border-radius:2px;overflow:hidden;cursor:pointer;box-shadow:0 0 0 1px var(--line)}
+.thumbs button[aria-current="true"]{box-shadow:0 0 0 2px var(--brass)}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.pinfo{padding:34px 30px 30px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.pinfo h2{font-size:clamp(28px,3.2vw,38px)}
+.pinfo .price{font-size:24px}
+.status{font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:500}
+.status.sold{color:var(--sold)} .status.available{color:var(--ok)} .status.made{color:var(--brass)}
+.details{font-size:14px;color:var(--muted);white-space:pre-line;border-top:1px solid var(--line);padding-top:14px}
+.buy-note{font-size:13px;color:var(--muted)}
+.ask{border:1px solid var(--line);border-radius:var(--r);padding:14px;display:grid;gap:8px;font-size:14px}
+.ask .val{font-weight:500;user-select:all;word-break:break-word}
+
+/* manage button */
+.manage-fab{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:35;box-shadow:0 10px 30px -10px rgba(0,0,0,.45)}
+.manage-fab .dot{width:8px;height:8px;border-radius:50%;background:#e0a33a;display:inline-block}
+
+/* admin panel */
+.admin{position:fixed;inset:0;z-index:50;background:rgba(15,12,10,.45);display:flex;justify-content:flex-end}
+.panel{background:var(--paper);width:min(720px,100%);height:100%;display:flex;flex-direction:column;border-left:1px solid var(--line);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.phead{padding:16px max(16px,env(safe-area-inset-right,0px)) 12px 20px;border-bottom:1px solid var(--line);display:grid;gap:12px}
+.phead .top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.phead h2{font-size:26px}
+.pstate{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px}
+.pstate.dirty{color:var(--brass)}
+.pactions{display:flex;gap:8px;flex-wrap:wrap}
+.tabs{display:flex;gap:4px;border-bottom:0}
+.tabs button{all:unset;cursor:pointer;padding:8px 12px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid transparent}
+.tabs button[aria-selected="true"]{color:var(--ink);border-color:var(--ink)}
+.pbody{flex:1;overflow:auto;padding:20px max(16px,env(safe-area-inset-right,0px)) 40px 20px}
+.msg{font-size:14px;padding:10px 12px;border-radius:var(--r);background:var(--tray);margin-bottom:14px}
+.msg.err{color:var(--sold)}
+.plist{display:grid;gap:8px}
+.prow{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:12px;align-items:center;padding:8px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.prow img,.prow .noimg{width:52px;height:52px;object-fit:cover;border-radius:2px;background:var(--tray)}
+.prow .t{min-width:0}
+.prow .t b{font-weight:500;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.prow .t small{color:var(--muted);font-size:12px}
+.prow .ctl{display:flex;gap:4px}
+.iconbtn{width:34px;height:34px;border-radius:var(--r);border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;font-size:14px}
+.iconbtn:hover{border-color:var(--ink)}
+.iconbtn[disabled]{opacity:.3;cursor:default}
+.pill{font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;border-radius:2px;border:1px solid var(--line);margin-left:6px}
+.form{display:grid;gap:16px}
+.frow{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.field{display:grid;gap:6px;min-width:0}
+.field label{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.field .hint{font-size:12.5px;color:var(--muted)}
+.field input[type=text],.field input[type=url],.field input[type=email],.field input[type=number],.field select,.field textarea{font:15px/1.4 var(--f-body);padding:10px 12px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);color:var(--ink);width:100%;box-sizing:border-box}
+.field textarea{min-height:92px;resize:vertical}
+.check{display:flex;gap:10px;align-items:center;font-size:14px}
+.photos{display:flex;gap:10px;flex-wrap:wrap}
+.pthumb{position:relative;width:96px;display:grid;gap:4px}
+.pthumb img{width:96px;height:96px;object-fit:cover;border-radius:2px;background:var(--tray)}
+.pthumb .main-tag{position:absolute;left:4px;top:4px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:2px 5px;border-radius:2px}
+.pthumb .row{display:flex;gap:4px}
+.pthumb .row button{flex:1;font-size:11px;padding:4px 0;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:2px;cursor:pointer}
+.upload{width:96px;height:96px;border:1px dashed var(--muted);border-radius:2px;display:grid;place-items:center;text-align:center;font-size:12px;color:var(--muted);cursor:pointer;padding:6px;box-sizing:border-box}
+.upload input{position:absolute;width:1px;height:1px;opacity:0}
+.danger{border-top:1px solid var(--line);padding-top:16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.btn.warn{background:transparent;color:var(--sold);border-color:var(--sold)}
+.btn.warn:hover{background:var(--sold);color:var(--paper)}
+.help ol{padding-left:20px;display:grid;gap:10px;margin:0}
+.help h3{font-size:22px;margin:22px 0 10px}
+.help h3:first-child{margin-top:0}
+.help p{max-width:62ch}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:60;background:var(--ink);color:var(--paper);padding:12px 18px;border-radius:var(--r);font-size:14px;max-width:calc(100% - 32px)}
+</style>
+</head>
+<body>
+<div id="app"><div class="wrap" style="padding-block:80px;text-align:center"><p class="eyebrow">e.m. clare jewelry</p><p style="margin-top:10px;color:var(--muted)">Loading the collection…</p></div></div>
+<script id="site-script">
+(function(){
+"use strict";
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function clone(o){return JSON.parse(JSON.stringify(o))}
+function uid(){return "p"+Date.now().toString(36)+Math.random().toString(36).slice(2,6)}
+function money(n){if(n===""||n==null||isNaN(Number(n)))return "";var v=Number(n);return "$"+v.toLocaleString("en-US",{minimumFractionDigits:v%1?2:0,maximumFractionDigits:2})}
+function src(p){if(!p)return "";return /^(https?:|data:|\/)/.test(p)?p:"/_blob/"+p}
+function safeUrl(u){u=String(u||"").trim();return /^https:\/\//i.test(u)?u:""}
+
+var LOGO="/logo.webp";
+var published=null,data=null;
+var TOKEN_KEY="emclare-token";
+var DRAFT_KEY="emclare-draft";
+var STATUS={available:"Available","made-to-order":"Made to order",sold:"Sold"};
+
+var cap={canEdit:false,assets:null,token:""};
+function getToken(){try{return localStorage.getItem(TOKEN_KEY)||""}catch(e){return ""}}
+function setToken(t){cap.token=t||"";cap.canEdit=!!t;cap.assets=t?{upload:apiUpload}:null;try{t?localStorage.setItem(TOKEN_KEY,t):localStorage.removeItem(TOKEN_KEY)}catch(e){}}
+function api(path,opts){opts=opts||{};opts.headers=opts.headers||{};if(cap.token)opts.headers.Authorization="Bearer "+cap.token;
+  return fetch(path,opts).then(function(r){return r.json().catch(function(){return {}}).then(function(b){if(!r.ok){var e=new Error(b.error||("Error "+r.status));e.status=r.status;e.body=b;throw e}return b})})}
+function apiUpload(blob){return api("/api/upload",{method:"POST",headers:{"Content-Type":blob.type||"image/jpeg"},body:blob}).then(function(r){return {id:r.url}},function(e){if(e.status===401)signedOut();throw e})}
+function signedOut(){setToken("");ui.msg={err:1,text:"You were signed out. Sign in again to keep editing; your changes are saved on this device."};if(ui.adminOpen)renderAdmin()}
+var ui={filter:"All",tab:"products",editing:null,confirmDelete:false,publishing:false,msg:null,uploading:0};
+var dirty=false;
+
+/* ---------- public store ---------- */
+function shop(){return data.shop}
+function visible(){return data.products.filter(function(p){return !p.hidden})}
+function catsInUse(){var seen=[];visible().forEach(function(p){if(p.category&&seen.indexOf(p.category)<0)seen.push(p.category)});
+  var order=shop().categories||[];seen.sort(function(a,b){var ia=order.indexOf(a),ib=order.indexOf(b);return (ia<0?99:ia)-(ib<0?99:ib)});return seen}
+
+function card(p){
+  var img=p.photos&&p.photos[0];
+  var badge=p.status==="sold"?'<span class="badge sold">Sold</span>':p.status==="made-to-order"?'<span class="badge">Made to order</span>':"";
+  return '<button class="card" data-open="'+esc(p.id)+'" aria-label="'+esc(p.name)+'">'+
+    '<div class="ph">'+(img?'<img loading="lazy" src="'+esc(src(img))+'" alt="'+esc(p.name)+'">':'<div class="none">e.m. clare</div>')+badge+'</div>'+
+    '<div class="meta"><h3>'+esc(p.name)+'</h3><span class="price">'+esc(money(p.price))+'</span></div>'+
+    (p.category?'<div class="cat">'+esc(p.category)+'</div>':"")+
+  '</button>';
+}
+
+function renderStore(){
+  if(!data)return;
+  var s=shop(),items=visible(),cats=catsInUse();
+  if(ui.filter!=="All"&&cats.indexOf(ui.filter)<0)ui.filter="All";
+  var shown=ui.filter==="All"?items:items.filter(function(p){return p.category===ui.filter});
+  var ig=(s.instagram||"").replace(/^@/,"");
+  var igUrl=ig?"https://www.instagram.com/"+encodeURIComponent(ig)+"/":"";
+  var year=new Date().getFullYear();
+
+  var grid;
+  if(!items.length){
+    grid='<div class="empty"><span class="script" style="color:var(--brass)">something special inside</span><h3>New pieces are on the way</h3><p>'+
+      (cap.canEdit?'Open <b>Manage shop</b> to add your first piece.':'The collection is being photographed now.'+(igUrl?' Follow along on Instagram for the first look.':''))+'</p>'+
+      (cap.canEdit?'<button class="btn" data-act="manage">Manage shop</button>':(igUrl?'<a class="btn ghost" href="'+esc(igUrl)+'" target="_blank" rel="noopener">@'+esc(ig)+'</a>':''))+'</div>';
+  }else{
+    grid=(cats.length>1?'<div class="chips" role="group" aria-label="Filter by type">'+["All"].concat(cats).map(function(c){return '<button class="chip" data-filter="'+esc(c)+'" aria-pressed="'+(c===ui.filter)+'">'+esc(c)+'</button>'}).join("")+'</div>':'<div style="height:12px"></div>')+
+      '<div class="grid">'+shown.map(card).join("")+'</div>';
+  }
+
+  var heroMark=s.heroPhoto?
+    '<div class="hero-mark photo"><span class="disc" aria-hidden="true"></span><img class="arch" src="'+esc(src(s.heroPhoto))+'" alt="Handmade necklaces by e.m. clare"><div class="mini"><img class="sticker" src="'+LOGO+'" alt=""></div><span class="tag">Handmade &middot; one of a kind</span></div>':
+    '<div class="hero-mark"><span class="disc" aria-hidden="true"></span><img class="sticker" src="'+LOGO+'" alt="e.m. clare jewelry — something special inside"><span class="tag">Handmade &middot; one of a kind</span></div>';
+  var strip=(s.strip||[]).filter(Boolean).slice(0,8);
+  $("#app").innerHTML=
+  (s.ribbon?'<div class="ribbon"><div class="wrap">'+esc(s.ribbon).replace(/ · /g,' <span>&middot;</span> ')+'</div></div>':'')+
+  '<header class="topbar"><div class="wrap bar">'+
+    '<a class="brand" href="#top" aria-label="e.m. clare jewelry, home"><img class="sticker" src="'+LOGO+'" alt=""><span><b>e.m. clare</b><i>jewelry</i></span></a>'+
+    '<nav class="main" aria-label="Main"><a href="#shop">Shop</a><a href="#custom">Custom</a><a href="#about">About</a><a href="#contact">Contact</a></nav>'+
+  '</div></header>'+
+  '<main id="top">'+
+  '<section class="hero"><div class="wrap hero-grid">'+
+    '<div><p class="eyebrow">'+esc(s.eyebrow)+'</p><h1>'+esc(s.headline).replace(/\*(.+?)\*/g,'<em>$1</em>')+'</h1><p class="lede">'+esc(s.intro)+'</p>'+
+    '<div class="ctas"><a class="btn" href="#shop">Shop the collection</a><a class="btn ghost" href="#custom">Request a custom piece</a></div></div>'+
+    heroMark+
+  '</div></section>'+
+  '<div class="wrap"><hr class="dots"></div>'+
+  '<section class="block" id="shop"><div class="wrap">'+
+    '<div class="sec-head"><h2>The collection</h2>'+(items.length?'<span class="count">'+items.length+(items.length===1?' piece':' pieces')+'</span>':'')+'</div>'+grid+
+  '</div></section>'+
+  '<section class="block band" id="custom"><div class="wrap two">'+
+    '<div><p class="eyebrow">Custom orders</p><h2 style="font-size:clamp(30px,3.6vw,42px);margin-top:10px">'+esc(s.customHeadline)+'</h2></div>'+
+    '<div><p class="prose">'+esc(s.customText)+'</p><div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn gold" href="#contact">Start a custom order</a>'+(igUrl?'<a class="btn on-dark" href="'+esc(igUrl)+'" target="_blank" rel="noopener">See recent work</a>':'')+'</div><span class="script-mark">made by hand, just for you</span></div>'+
+  '</div></section>'+
+  '<section class="block" id="about"><div class="wrap two">'+
+    (s.aboutPhoto?'<img class="about-photo" src="'+esc(src(s.aboutPhoto))+'" alt="Jennifer Clare">':'<div><p class="eyebrow">The maker</p><p class="script" style="font-size:44px;margin-top:18px;color:var(--brass)">Jennifer Clare</p></div>')+
+    '<div><p class="eyebrow">About</p><h2 style="font-size:clamp(30px,3.6vw,42px);margin:10px 0 16px">'+esc(s.aboutHeadline)+'</h2><p class="prose">'+esc(s.about)+'</p></div>'+
+  '</div></section>'+
+  (strip.length?'<section class="block" id="studio" style="padding-top:0"><div class="wrap">'+
+    '<div class="sec-head"><div><p class="eyebrow" style="color:var(--brass)">From the studio</p><h2 style="font-size:clamp(26px,3vw,36px);margin-top:8px">Follow along'+(ig?' @'+esc(ig):'')+'</h2></div>'+(igUrl?'<a class="btn ghost small" href="'+esc(igUrl)+'" target="_blank" rel="noopener">Open Instagram</a>':'')+'</div>'+
+    '<div class="strip">'+strip.map(function(ph){return '<a href="'+esc(igUrl||"#shop")+'"'+(igUrl?' target="_blank" rel="noopener"':'')+' aria-label="e.m. clare on Instagram"><img loading="lazy" src="'+esc(src(ph))+'" alt="e.m. clare jewelry"></a>'}).join("")+'</div>'+
+  '</div></section>':'')+
+  '<section class="block" id="contact"><div class="wrap">'+
+    '<div class="sec-head"><h2>Get in touch</h2></div>'+
+    '<div class="contact-grid">'+
+      (s.email?'<div class="contact-item"><span class="eyebrow">Email</span><span class="val">'+esc(s.email)+'</span><div class="row"><button class="btn small ghost" data-copy="'+esc(s.email)+'">Copy address</button></div></div>':'')+
+      (igUrl?'<div class="contact-item"><span class="eyebrow">Instagram</span><span class="val">@'+esc(ig)+'</span><div class="row"><a class="btn small ghost" href="'+esc(igUrl)+'" target="_blank" rel="noopener">Send a message</a></div></div>':'')+
+      (s.shipping?'<div class="contact-item"><span class="eyebrow">Shipping &amp; care</span><p class="prose" style="font-size:15px">'+esc(s.shipping)+'</p></div>':'')+
+    '</div>'+
+  '</div></section>'+
+  '</main>'+
+  '<footer class="site"><div class="wrap"><span>&copy; '+year+' e.m. clare jewelry</span><span class="script" style="color:var(--brass);font-size:20px">something special inside</span>'+(cap.canEdit?'':'<button class="linkbtn" data-act="login" style="color:inherit;opacity:.7;font-size:12px">Shop login</button>')+'</div></footer>'+
+  (cap.canEdit?'<button class="btn manage-fab" data-act="manage">'+(dirty?'<span class="dot" aria-hidden="true"></span>':'')+'Manage shop</button>':'')+
+  '<div id="modal-root"></div><div id="admin-root"></div><div id="toast-root"></div>';
+  if(ui.adminOpen)renderAdmin();
+  routeModal();
+}
+
+/* ---------- product modal ---------- */
+function openProduct(id){location.hash="p-"+id}
+function routeModal(){
+  var root=$("#modal-root");if(!root)return;
+  var m=/^#p-(.+)$/.exec(location.hash);
+  if(!m){root.innerHTML="";document.body.style.overflow=ui.adminOpen?"hidden":"";return}
+  var p=data.products.filter(function(x){return x.id===m[1]})[0];
+  if(!p||(p.hidden&&!cap.canEdit)){root.innerHTML="";return}
+  var s=shop(),photos=p.photos||[],i=0;
+  var ig=(s.instagram||"").replace(/^@/,"");
+  var buy=safeUrl(p.buyUrl);
+  function draw(){
+    var statusCls=p.status==="sold"?"sold":p.status==="made-to-order"?"made":"available";
+    var action;
+    if(p.status==="sold"){action='<p>This piece has found its home. Ask about something similar.</p>'}
+    else if(buy){action='<a class="btn" href="'+esc(buy)+'" target="_blank" rel="noopener">'+(p.status==="made-to-order"?"Order now":"Buy now")+(p.price!==""&&p.price!=null?" &middot; "+esc(money(p.price)):"")+'</a><p class="buy-note">Secure checkout opens in a new tab.</p>'}
+    else{action='<p class="buy-note">To purchase, send a note with the piece name and Jennifer will reply with payment details.</p>'}
+    root.innerHTML='<div class="overlay" data-close="1"><div class="sheet" role="dialog" aria-modal="true" aria-label="'+esc(p.name)+'">'+
+      '<button class="x" data-close="1" aria-label="Close">&times;</button>'+
+      '<div class="gallery"><div class="main">'+(photos.length?'<img src="'+esc(src(photos[i]))+'" alt="'+esc(p.name)+'">':'<div class="ph" style="aspect-ratio:1"><div class="none">e.m. clare</div></div>')+'</div>'+
+      (photos.length>1?'<div class="thumbs">'+photos.map(function(ph,k){return '<button data-thumb="'+k+'" aria-current="'+(k===i)+'" aria-label="Photo '+(k+1)+'"><img src="'+esc(src(ph))+'" alt=""></button>'}).join("")+'</div>':'')+'</div>'+
+      '<div class="pinfo">'+(p.category?'<span class="eyebrow">'+esc(p.category)+'</span>':'')+
+        '<h2>'+esc(p.name)+'</h2>'+
+        '<div style="display:flex;gap:16px;align-items:baseline;flex-wrap:wrap"><span class="price">'+esc(money(p.price))+'</span><span class="status '+statusCls+'">'+esc(STATUS[p.status]||"Available")+'</span></div>'+
+        (p.description?'<p class="prose" style="font-size:16px">'+esc(p.description)+'</p>':'')+
+        '<div style="display:grid;gap:8px;justify-items:start">'+action+'</div>'+
+        '<div class="ask"><b style="font-weight:500">Questions about this piece?</b>'+
+          (s.email?'<span>Email <span class="val">'+esc(s.email)+'</span></span><div><button class="btn small ghost" data-copy="'+esc(s.email)+'">Copy email</button></div>':'')+
+          (ig?'<span>or message <a href="https://www.instagram.com/'+encodeURIComponent(ig)+'/" target="_blank" rel="noopener">@'+esc(ig)+'</a> on Instagram</span>':'')+
+        '</div>'+
+        (p.details?'<div class="details">'+esc(p.details)+'</div>':'')+
+      '</div></div></div>';
+    $$("[data-thumb]",root).forEach(function(b){b.onclick=function(e){e.stopPropagation();i=Number(b.getAttribute("data-thumb"));draw()}});
+    var x=$(".x",root);if(x)x.focus({preventScroll:true});
+  }
+  draw();document.body.style.overflow="hidden";
+}
+function closeModal(){if(/^#p-/.test(location.hash)){history.pushState(null,"",location.pathname+location.search+"#shop");routeModal()}}
+
+/* ---------- editing helpers ---------- */
+function markDirty(){dirty=true;try{localStorage.setItem(DRAFT_KEY,JSON.stringify({base:published.updated||"",data:data}))}catch(e){}updateState()}
+function updateState(){var el=$("#pstate");if(el){el.className="pstate"+(dirty?" dirty":"");el.textContent=dirty?"Unpublished changes — customers see the last published version":"Everything is published"}
+  var pb=$("#publish-btn");if(pb)pb.disabled=!dirty||ui.publishing||ui.uploading>0;var db=$("#discard-btn");if(db)db.hidden=!dirty}
+function toast(t){var r=$("#toast-root");if(!r)return;r.innerHTML='<div class="toast" role="status">'+esc(t)+'</div>';clearTimeout(toast._t);toast._t=setTimeout(function(){r.innerHTML=""},2600)}
+function copy(text){try{navigator.clipboard.writeText(text).then(function(){toast("Copied")},function(){toast(text)})}catch(e){toast(text)}}
+
+/* ---------- admin panel ---------- */
+function openAdmin(){ui.adminOpen=true;renderAdmin()}
+function closeAdmin(){ui.adminOpen=false;ui.editing=null;var r=$("#admin-root");if(r)r.innerHTML="";if(location.hash==="#manage")history.replaceState(null,"",location.pathname+location.search);renderStore()}
+
+function loginHtml(){
+  return '<div class="admin" data-admin-bg="1"><div class="panel" role="dialog" aria-modal="true" aria-label="Shop login">'+
+    '<div class="phead"><div class="top"><h2>Shop login</h2><button class="iconbtn" data-act="close-admin" aria-label="Close">&times;</button></div></div>'+
+    '<div class="pbody"><form id="login-form" class="form" style="max-width:380px">'+
+      (ui.msg?'<div class="msg'+(ui.msg.err?' err':'')+'">'+esc(ui.msg.text)+'</div>':'')+
+      '<p class="count">Enter the shop password to add pieces, change photos and publish.</p>'+
+      '<div class="field"><label for="login-pw">Password</label><input id="login-pw" type="password" autocomplete="current-password" required style="font:15px var(--f-body);padding:10px 12px;border:1px solid var(--line);border-radius:3px;background:var(--card);color:var(--ink)"></div>'+
+      '<div><button class="btn" type="submit" id="login-btn"'+(ui.loggingIn?' disabled':'')+'>'+(ui.loggingIn?'Signing in…':'Sign in')+'</button></div>'+
+    '</form></div></div></div>';
+}
+function renderAdmin(){
+  var r=$("#admin-root");if(!r)return;
+  if(!cap.canEdit){r.innerHTML=loginHtml();document.body.style.overflow="hidden";var pw=$("#login-pw");if(pw&&!ui.loggingIn)pw.focus();return}
+  if(!data){r.innerHTML="";return}
+  var body;
+  if(ui.editing){body=editorHtml(ui.editing)}
+  else if(ui.tab==="products"){body=listHtml()}
+  else if(ui.tab==="shop"){body=shopHtml()}
+  else{body=helpHtml()}
+  r.innerHTML='<div class="admin" data-admin-bg="1"><div class="panel" role="dialog" aria-modal="true" aria-label="Shop manager">'+
+    '<div class="phead"><div class="top"><h2>Shop manager</h2><div class="pactions">'+
+      '<button class="btn small ghost" id="discard-btn" data-act="discard">Discard changes</button>'+
+      '<button class="btn small" id="publish-btn" data-act="publish">'+(ui.publishing?"Publishing…":"Publish changes")+'</button>'+
+      '<button class="btn small ghost" data-act="logout">Sign out</button>'+
+      '<button class="iconbtn" data-act="close-admin" aria-label="Close shop manager">&times;</button></div></div>'+
+      '<div id="pstate" class="pstate"></div>'+
+      (ui.editing?'':'<div class="tabs" role="tablist">'+[["products","Pieces ("+data.products.length+")"],["shop","Shop details"],["help","How it works"]].map(function(t){return '<button role="tab" data-tab="'+t[0]+'" aria-selected="'+(ui.tab===t[0])+'">'+t[1]+'</button>'}).join("")+'</div>')+
+    '</div><div class="pbody">'+(ui.msg?'<div class="msg'+(ui.msg.err?' err':'')+'">'+esc(ui.msg.text)+'</div>':'')+body+'</div></div></div>';
+  updateState();document.body.style.overflow="hidden";
+}
+
+function listHtml(){
+  var ps=data.products;
+  var head='<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px"><p class="count">Drag order with the arrows. The first pieces show first in the shop.</p><button class="btn small" data-act="add">Add a piece</button></div>';
+  if(!ps.length)return head+'<div class="empty"><h3>No pieces yet</h3><p>Add a piece with its photos, price and checkout link. Customers see it after you publish.</p><button class="btn" data-act="add">Add your first piece</button></div>';
+  return head+'<div class="plist">'+ps.map(function(p,k){
+    var img=p.photos&&p.photos[0];
+    return '<div class="prow">'+(img?'<img src="'+esc(src(img))+'" alt="">':'<div class="noimg"></div>')+
+      '<div class="t"><b>'+esc(p.name||"Untitled piece")+'</b><small>'+esc(money(p.price)||"No price")+' · '+esc(p.category||"No category")+
+      (p.status==="sold"?'<span class="pill">Sold</span>':p.status==="made-to-order"?'<span class="pill">Made to order</span>':'')+
+      (p.hidden?'<span class="pill">Hidden</span>':'')+(!safeUrl(p.buyUrl)&&p.status!=="sold"?'<span class="pill">No checkout link</span>':'')+'</small></div>'+
+      '<div class="ctl"><button class="iconbtn" data-move="'+k+'" data-dir="-1" aria-label="Move up"'+(k===0?' disabled':'')+'>&uarr;</button><button class="iconbtn" data-move="'+k+'" data-dir="1" aria-label="Move down"'+(k===ps.length-1?' disabled':'')+'>&darr;</button><button class="btn small ghost" data-edit="'+esc(p.id)+'">Edit</button></div></div>';
+  }).join("")+'</div>';
+}
+
+function field(id,label,input,hint){return '<div class="field"><label for="'+id+'">'+label+'</label>'+input+(hint?'<span class="hint">'+hint+'</span>':'')+'</div>'}
+
+function editorHtml(id){
+  var p=data.products.filter(function(x){return x.id===id})[0];if(!p){ui.editing=null;return listHtml()}
+  var cats=shop().categories||[];
+  var catOpts=['<option value="">Choose…</option>'].concat(cats.map(function(c){return '<option'+(c===p.category?' selected':'')+'>'+esc(c)+'</option>'}));
+  if(p.category&&cats.indexOf(p.category)<0)catOpts.push('<option selected>'+esc(p.category)+'</option>');
+  var photos=(p.photos||[]).map(function(ph,k){return '<div class="pthumb"><img src="'+esc(src(ph))+'" alt="">'+(k===0?'<span class="main-tag">Main</span>':'')+
+    '<div class="row">'+(k>0?'<button data-mainph="'+k+'">Main</button>':'')+'<button data-rmph="'+k+'">Remove</button></div></div>'}).join("");
+  var uploadTile=cap.assets?'<label class="upload">'+(ui.uploading?'Uploading '+ui.uploading+'…':'+ Add photos')+'<input id="f-upload" type="file" accept="image/*" multiple></label>':'';
+  return '<div class="form" data-pid="'+esc(p.id)+'">'+
+    '<div><button class="linkbtn" data-act="back">&larr; All pieces</button></div>'+
+    field("f-name","Name",'<input id="f-name" type="text" data-k="name" value="'+esc(p.name)+'" placeholder="e.g. Sea glass drop earrings">')+
+    '<div class="frow">'+
+      field("f-price","Price (USD)",'<input id="f-price" type="number" min="0" step="0.01" data-k="price" value="'+esc(p.price)+'" placeholder="48">')+
+      field("f-category","Category",'<select id="f-category" data-k="category">'+catOpts.join("")+'</select>','Edit the list under Shop details.')+
+      field("f-status","Status",'<select id="f-status" data-k="status">'+Object.keys(STATUS).map(function(k){return '<option value="'+k+'"'+(p.status===k?' selected':'')+'>'+STATUS[k]+'</option>'}).join("")+'</select>')+
+    '</div>'+
+    '<div class="field"><label>Photos</label><div class="photos">'+photos+uploadTile+'</div>'+
+      '<span class="hint">'+(cap.assets?'The first photo is the one shoppers see in the grid. Square or portrait photos look best.':'Sign in to upload photos.')+'</span>'+
+      '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px"><input id="f-photourl" type="url" placeholder="Or paste an image link (https://…)" style="flex:1;min-width:0;font:15px var(--f-body);padding:9px 12px;border:1px solid var(--line);border-radius:3px;background:var(--card);color:var(--ink)"><button class="btn small ghost" data-act="addurl">Add link</button></div></div>'+
+    field("f-desc","Description",'<textarea id="f-desc" data-k="description" placeholder="What makes this piece special — the stones, the story, how it wears.">'+esc(p.description)+'</textarea>')+
+    field("f-details","Details",'<textarea id="f-details" data-k="details" placeholder="Materials: sterling silver&#10;Length: 18 in&#10;Care: store dry, polish with a soft cloth">'+esc(p.details)+'</textarea>','One detail per line.')+
+    field("f-buy","Checkout link",'<input id="f-buy" type="url" data-k="buyUrl" value="'+esc(p.buyUrl)+'" placeholder="https://buy.stripe.com/…">','Paste the Stripe Payment Link (or PayPal link) for this piece. Without one, shoppers are asked to email you.')+
+    '<label class="check"><input id="f-hidden" type="checkbox" data-k="hidden"'+(p.hidden?' checked':'')+'> Hide from the shop (keeps it saved here)</label>'+
+    '<div class="danger">'+(ui.confirmDelete?'<span>Delete “'+esc(p.name||"this piece")+'” for good?</span><button class="btn small warn" data-act="del-yes">Delete</button><button class="btn small ghost" data-act="del-no">Keep it</button>':'<button class="btn small warn" data-act="del">Delete piece</button>')+
+    '<span style="flex:1"></span><button class="btn small" data-act="back">Done</button></div>'+
+  '</div>';
+}
+
+function shopHtml(){
+  var s=shop();
+  function t(k,label,ph,rows,hint){return field("s-"+k,label,'<textarea id="s-'+k+'" data-sk="'+k+'" rows="'+(rows||3)+'" placeholder="'+esc(ph||"")+'">'+esc(s[k])+'</textarea>',hint)}
+  function i(k,label,ph,type,hint){return field("s-"+k,label,'<input id="s-'+k+'" type="'+(type||"text")+'" data-sk="'+k+'" value="'+esc(s[k])+'" placeholder="'+esc(ph||"")+'">',hint)}
+  return '<div class="form">'+
+    '<h3 style="font-size:22px">Home page</h3>'+i("ribbon","Banner across the top","Handmade one piece at a time · Custom orders welcome","text","Leave empty to hide it.")+i("eyebrow","Small line above the headline")+i("headline","Headline","","text","Wrap a word in *stars* to color it coral.")+t("intro","Introduction","",3)+
+    photoField("heroPhoto","Home page photo","Shows in an arch beside the headline. Without one, the logo shows there.")+
+    '<h3 style="font-size:22px">Custom orders</h3>'+i("customHeadline","Headline")+t("customText","How custom orders work","",5)+
+    '<h3 style="font-size:22px">About</h3>'+i("aboutHeadline","Headline")+t("about","Your story","",6)+
+    photoField("aboutPhoto","About photo","A photo of you or your workspace.")+
+    '<h3 style="font-size:22px">From the studio</h3>'+
+    '<div class="field"><label>Photo strip (up to 8)</label><div class="photos">'+(s.strip||[]).map(function(ph,k){return '<div class="pthumb"><img src="'+esc(src(ph))+'" alt=""><div class="row"><button data-rmstrip="'+k+'">Remove</button></div></div>'}).join("")+
+      (cap.assets&&(s.strip||[]).length<8?'<label class="upload">'+(ui.uploading?'Uploading…':'+ Add photos')+'<input id="s-upload-strip" type="file" accept="image/*" multiple></label>':'')+'</div><span class="hint">A row of photos linking to your Instagram. Leave empty to hide the section.</span></div>'+
+    '<h3 style="font-size:22px">Contact &amp; policies</h3>'+
+    '<div class="frow">'+i("email","Email shoppers can reach you at","you@example.com","email")+i("instagram","Instagram username","em_clare_jewelry")+'</div>'+
+    t("shipping","Shipping, returns and care","",4)+
+    '<h3 style="font-size:22px">Categories</h3>'+
+    field("s-cats","Categories, one per line",'<textarea id="s-cats" rows="5">'+esc((s.categories||[]).join("\n"))+'</textarea>','These become the filter buttons in the shop, in this order.')+
+  '</div>';
+}
+
+function photoField(key,label,hint){var s=shop();
+  return '<div class="field"><label>'+label+'</label><div class="photos">'+(s[key]?'<div class="pthumb"><img src="'+esc(src(s[key]))+'" alt=""><div class="row"><button data-rmshop="'+key+'">Remove</button></div></div>':'')+
+    (cap.assets?'<label class="upload">'+(ui.uploading?'Uploading…':(s[key]?'Replace':'+ Add photo'))+'<input id="s-upload-'+key+'" data-shop-photo="'+key+'" type="file" accept="image/*"></label>':'<span class="hint">Sign in to upload photos.</span>')+'</div><span class="hint">'+hint+'</span></div>'}
+function helpHtml(){
+  return '<div class="help">'+
+  '<h3>Adding a piece</h3><ol><li>Open <b>Pieces</b> and tap <b>Add a piece</b>.</li><li>Fill in the name, price, category and description, then add photos. The first photo is the main one.</li><li>Paste the piece’s checkout link (see below).</li><li>Tap <b>Publish changes</b>. Shoppers see the update right away.</li></ol>'+
+  '<h3>Getting paid with Stripe</h3><ol><li>Create a free account at stripe.com and connect your bank account.</li><li>In Stripe, go to <b>Payment Links</b> and create one for the piece, with its name, price and photo. Under Options, turn on <b>Collect customer addresses</b> (choose billing and shipping). For one-of-a-kind pieces, turn on <b>Limit the number of payments</b> and enter 1, so the link switches off after it sells.</li><li>Copy the link (it starts with https://buy.stripe.com/) and paste it into the piece’s <b>Checkout link</b>.</li><li>When a piece sells, set its status to <b>Sold</b> and publish. You can also deactivate the link in Stripe.</li></ol>'+
+  '<p style="margin-top:12px;color:var(--muted)">PayPal works the same way: paste a PayPal payment link instead. Pieces without a link ask shoppers to email you.</p>'+
+  '<h3>Good to know</h3><ol><li>To get here, tap <b>Shop login</b> at the bottom of the site and enter the shop password. Tap <b>Sign out</b> when you use a shared computer.</li><li>Your edits are kept on this device until you publish, so you can close the manager and come back.</li><li>Use <b>Hide from the shop</b> to take a piece down without deleting it.</li><li>Change the order of pieces with the arrows; new favorites can go to the top.</li></ol></div>';
+}
+
+/* ---------- image upload ---------- */
+function shrink(file){
+  return new Promise(function(res){
+    if(!/^image\/(jpeg|png|webp)$/.test(file.type)){res(file);return}
+    var url=URL.createObjectURL(file),img=new Image();
+    img.onload=function(){var max=1800,w=img.naturalWidth,h=img.naturalHeight,k=Math.min(1,max/Math.max(w,h));
+      if(k===1&&file.size<1.5e6){URL.revokeObjectURL(url);res(file);return}
+      var c=document.createElement("canvas");c.width=Math.round(w*k);c.height=Math.round(h*k);
+      c.getContext("2d").drawImage(img,0,0,c.width,c.height);URL.revokeObjectURL(url);
+      c.toBlob(function(b){res(b||file)},"image/jpeg",0.86)};
+    img.onerror=function(){URL.revokeObjectURL(url);res(file)};img.src=url;
+  });
+}
+function uploadFiles(files,onDone){
+  if(!cap.assets)return;
+  files=Array.prototype.slice.call(files||[]);if(!files.length)return;
+  ui.uploading+=files.length;ui.msg=null;renderAdmin();
+  files.forEach(function(f){
+    shrink(f).then(function(b){return cap.assets.upload(b)}).then(function(r){onDone(r.id)},function(e){
+      ui.msg={err:1,text:"A photo didn’t upload ("+((e&&e.message)||"unknown error")+"). Try a JPG or PNG under 20 MB."}
+    }).then(function(){ui.uploading--;markDirty();renderAdmin()});
+  });
+}
+
+/* ---------- publish ---------- */
+function publish(){
+  if(!cap.canEdit||ui.publishing||!dirty)return;
+  ui.publishing=true;ui.msg=null;renderAdmin();
+  api("/api/catalog",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({base:published.updated||"",data:data})}).then(function(r){
+    try{localStorage.removeItem(DRAFT_KEY)}catch(e){}
+    data.updated=r.updated;published=clone(data);dirty=false;ui.publishing=false;
+    ui.msg={text:"Published. Shoppers now see your changes."};renderStoreKeepAdmin();
+  },function(e){
+    ui.publishing=false;
+    if(e.status===401){signedOut();return}
+    ui.msg={err:1,text:e.status===409?"The shop was changed on another device since you opened it. Tap Discard changes, reload the page, and make your edits again.":
+      "Publishing didn’t go through ("+(e.message||"no connection")+"). Your edits are saved on this device; try again."};
+    renderAdmin();
+  });
+}
+function renderStoreKeepAdmin(){var keep=ui.adminOpen;renderStore();if(keep)renderAdmin()}
+
+/* ---------- events ---------- */
+document.addEventListener("click",function(e){
+  var t=e.target.closest("button,a,[data-close],[data-admin-bg]");if(!t)return;
+  if(t.hasAttribute("data-copy")){e.preventDefault();copy(t.getAttribute("data-copy"));return}
+  if(t.hasAttribute("data-open")){openProduct(t.getAttribute("data-open"));return}
+  if(t.hasAttribute("data-filter")){ui.filter=t.getAttribute("data-filter");renderStore();return}
+  if(t.hasAttribute("data-close")&&e.target===t){closeModal();return}
+  if(t.hasAttribute("data-admin-bg")&&e.target===t){closeAdmin();return}
+  if(t.hasAttribute("data-tab")){ui.tab=t.getAttribute("data-tab");ui.msg=null;renderAdmin();return}
+  if(t.hasAttribute("data-edit")){ui.editing=t.getAttribute("data-edit");ui.confirmDelete=false;ui.msg=null;renderAdmin();return}
+  if(t.hasAttribute("data-move")){var k=+t.getAttribute("data-move"),d=+t.getAttribute("data-dir"),a=data.products,j=k+d;if(j<0||j>=a.length)return;var tmp=a[k];a[k]=a[j];a[j]=tmp;markDirty();renderAdmin();return}
+  var pid=ui.editing,p=pid&&data.products.filter(function(x){return x.id===pid})[0];
+  if(t.hasAttribute("data-mainph")&&p){var m=+t.getAttribute("data-mainph");p.photos.unshift(p.photos.splice(m,1)[0]);markDirty();renderAdmin();return}
+  if(t.hasAttribute("data-rmph")&&p){p.photos.splice(+t.getAttribute("data-rmph"),1);markDirty();renderAdmin();return}
+  if(t.hasAttribute("data-rmshop")){shop()[t.getAttribute("data-rmshop")]="";markDirty();renderAdmin();return}
+  if(t.hasAttribute("data-rmstrip")){shop().strip.splice(+t.getAttribute("data-rmstrip"),1);markDirty();renderAdmin();return}
+  var act=t.getAttribute("data-act");if(!act)return;
+  if(act==="manage"||act==="login"){ui.msg=null;openAdmin();return}
+  if(act==="logout"){setToken("");ui.adminOpen=false;ui.editing=null;var ar=$("#admin-root");if(ar)ar.innerHTML="";document.body.style.overflow="";renderStore();toast("Signed out");return}
+  if(act==="close-admin"){closeAdmin();return}
+  if(act==="publish"){publish();return}
+  if(act==="discard"){data=clone(published);dirty=false;ui.editing=null;try{localStorage.removeItem(DRAFT_KEY)}catch(x){}ui.msg={text:"Changes discarded."};renderStoreKeepAdmin();return}
+  if(act==="add"){var np={id:uid(),name:"",price:"",category:"",status:"available",description:"",details:"",photos:[],buyUrl:"",hidden:false};data.products.unshift(np);ui.editing=np.id;ui.confirmDelete=false;markDirty();renderAdmin();var n=$("#f-name");if(n)n.focus();return}
+  if(act==="back"){ui.editing=null;ui.confirmDelete=false;renderAdmin();return}
+  if(act==="del"){ui.confirmDelete=true;renderAdmin();return}
+  if(act==="del-no"){ui.confirmDelete=false;renderAdmin();return}
+  if(act==="del-yes"&&p){data.products=data.products.filter(function(x){return x.id!==pid});ui.editing=null;ui.confirmDelete=false;markDirty();ui.msg={text:"Piece deleted. Publish to remove it from the shop."};renderAdmin();return}
+  if(act==="addurl"&&p){var u=safeUrl(($("#f-photourl")||{}).value);if(!u){ui.msg={err:1,text:"Paste an image link that starts with https://"};renderAdmin();return}p.photos.push(u);markDirty();ui.msg=null;renderAdmin();return}
+});
+document.addEventListener("input",function(e){
+  var el=e.target;
+  if(el.hasAttribute("data-k")){var p=data.products.filter(function(x){return x.id===ui.editing})[0];if(!p)return;var k=el.getAttribute("data-k");
+    p[k]=el.type==="checkbox"?el.checked:(k==="price"?(el.value===""?"":Number(el.value)):el.value);markDirty();return}
+  if(el.hasAttribute("data-sk")){shop()[el.getAttribute("data-sk")]=el.value;markDirty();return}
+  if(el.id==="s-cats"){shop().categories=el.value.split("\n").map(function(s){return s.trim()}).filter(Boolean);markDirty();return}
+});
+document.addEventListener("change",function(e){
+  var el=e.target;
+  if(el.hasAttribute("data-k")&&el.type==="checkbox"){var p=data.products.filter(function(x){return x.id===ui.editing})[0];if(p){p.hidden=el.checked;markDirty()}}
+  if(el.id==="f-upload"){var pid=ui.editing;uploadFiles(el.files,function(id){var p=data.products.filter(function(x){return x.id===pid})[0];if(p){p.photos=p.photos||[];p.photos.push(id)}})}
+  if(el.hasAttribute("data-shop-photo")){var key=el.getAttribute("data-shop-photo");uploadFiles(el.files,function(id){shop()[key]=id})}
+  if(el.id==="s-upload-strip"){uploadFiles(Array.prototype.slice.call(el.files).slice(0,8-(shop().strip||[]).length),function(id){var st=shop().strip=shop().strip||[];if(st.length<8)st.push(id)})}
+});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"){if(/^#p-/.test(location.hash))closeModal();else if(ui.adminOpen)closeAdmin()}});
+window.addEventListener("hashchange",function(){if(location.hash==="#manage"){openAdmin();return}routeModal()});
+window.addEventListener("beforeunload",function(){/* drafts live in localStorage */});
+
+/* ---------- login ---------- */
+document.addEventListener("submit",function(e){
+  if(!e.target||e.target.id!=="login-form")return;e.preventDefault();
+  var pw=($("#login-pw")||{}).value||"";if(!pw)return;
+  ui.loggingIn=true;ui.msg=null;renderAdmin();
+  api("/api/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({password:pw})}).then(function(r){
+    ui.loggingIn=false;setToken(r.token);
+    return loadCatalog().then(function(){restoreDraft();renderStore();openAdmin()});
+  },function(err){ui.loggingIn=false;ui.msg={err:1,text:err.message||"Sign-in didn’t work. Try again."};renderAdmin()});
+});
+
+/* ---------- boot ---------- */
+function loadCatalog(){
+  return api("/api/catalog").catch(function(e){
+    if(e.status===404)return fetch("/seed/catalog.json").then(function(r){if(!r.ok)throw new Error("seed");return r.json()});
+    throw e;
+  }).then(function(c){published=c;data=clone(c)});
+}
+function restoreDraft(){
+  try{var raw=localStorage.getItem(DRAFT_KEY);if(raw){var dr=JSON.parse(raw);if(dr&&dr.data&&dr.base===(published.updated||"")){data=dr.data;dirty=true}else localStorage.removeItem(DRAFT_KEY)}}catch(x){}
+}
+setToken(getToken());
+loadCatalog().then(function(){
+  if(cap.canEdit)restoreDraft();
+  renderStore();
+  if(location.hash==="#manage")openAdmin();
+},function(){
+  $("#app").innerHTML='<div class="wrap" style="padding-block:80px;text-align:center"><p class="eyebrow">e.m. clare jewelry</p><p style="margin-top:10px">The collection didn’t load. Check your connection and refresh the page.</p></div>';
+});
+})();
+</script>
+</body>
+</html>
